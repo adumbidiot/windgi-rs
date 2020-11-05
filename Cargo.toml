@@ -5,5 +5,17 @@ authors = [ "adumbidiot <nathaniel.daniel23@outlook.com>" ]
 edition = "2018"
 
 [dependencies]
-winapi = { version = "0.3.9" , features = [ "winuser", "winerror" ] }
 bitflags = "1.2.1"
+winapi = { version = "0.3.9", features = [ "winuser", "winerror" ] }
+
+[dev-dependencies]
+winapi = { version = "0.3.9", features = [ "shellscalingapi" ] }
+image = { version = "0.23.11", default-features = false, features = [ "jpeg" ] }
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+lto = true
+opt-level = "z"
+panic = "abort"
