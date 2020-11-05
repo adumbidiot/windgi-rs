@@ -17,7 +17,11 @@ fn main() {
     let brush = Brush::create_solid_brush(color).expect("Failed to create Solid Brush");
 
     loop {
-        let rect = Rect::new_xywh(0, 0, 1920, 1080);
+        let ctx_width = ctx.physical_width();
+        let ctx_height = ctx.physical_height();
+
+        let rect = Rect::new_xywh(0, 0, ctx_width, ctx_height);
+
         assert!(ctx.fill_rect(rect, &brush), "Failed to fill rect");
     }
 }

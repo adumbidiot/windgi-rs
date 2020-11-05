@@ -25,18 +25,23 @@ fn image_to_bitmap_handle(image: &BgraImage) -> Option<BitmapHandle> {
 }
 
 fn main() {
-    let brandon_image = image::load_from_memory(BRANDON).unwrap();
+    let brandon_image = image::load_from_memory(BRANDON).expect("Failed to load image");
 
     unsafe {
         SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
     }
 
-    let ctx = DeviceContext::desktop().unwrap();
+    let ctx = DeviceContext::desktop().expect("Failed to create DeviceContext");
 
-    let bitmap = image_to_bitmap_handle(&brandon_image.into_bgra()).unwrap();
-    let bitmap_dimensions = bitmap.get_dimensions().unwrap();
+    let bitmap =
+        image_to_bitmap_handle(&brandon_image.into_bgra()).expect("Failed to get bitmap handle");
+    let bitmap_dimensions = bitmap
+        .get_dimensions()
+        .expect("Failed to get bitmap dimensions");
 
-    let bitmap_dc = ctx.get_compatible().unwrap();
+    let bitmap_dc = ctx
+        .get_compatible()
+        .expect("Failed to get bitmap device context");
     let _hbm_old = bitmap_dc.select_object(bitmap);
 
     let src_rect = Rect::new_xywh(0, 0, bitmap_dimensions.0, bitmap_dimensions.1);
@@ -48,6 +53,6 @@ fn main() {
         let dest_rect = Rect::new_xywh(0, 0, ctx_width, ctx_height);
 
         ctx.stretch_blit(dest_rect, &bitmap_dc, src_rect, RasterOperation::SRC_COPY)
-            .unwrap();
+            .expect("Failed to blit image to screen");
     }
 }
