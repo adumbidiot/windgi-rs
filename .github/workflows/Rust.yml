@@ -2,12 +2,10 @@ name: Rust
 'on':
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
-env:
-  DATABASE_URL: sqlite:./testing/testing_db.sqlite
+      - main
 
 jobs:
   lint:
