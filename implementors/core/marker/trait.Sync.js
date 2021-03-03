@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["windgi"] = [{"text":"impl Sync for Rect","synthetic":true,"types":[]},{"text":"impl Sync for Color","synthetic":true,"types":[]},{"text":"impl Sync for RasterOperation","synthetic":true,"types":[]},{"text":"impl !Sync for DeviceContext","synthetic":true,"types":[]},{"text":"impl !Sync for Brush","synthetic":true,"types":[]},{"text":"impl !Sync for GdiObject","synthetic":true,"types":[]},{"text":"impl !Sync for BitmapHandle","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

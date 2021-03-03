@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["primitives",""]],"struct":[["BitmapHandle","A Handle to a bitmap"],["Brush","A Brush"],["DeviceContext","A Device Context"],["GdiObject",""]]});

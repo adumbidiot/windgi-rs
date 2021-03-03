@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Color","An RGB Color"],["RasterOperation",""],["Rect","A Rectangle"]]});

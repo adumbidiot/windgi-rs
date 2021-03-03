@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["windgi"] = [{"text":"impl Freeze for Rect","synthetic":true,"types":[]},{"text":"impl Freeze for Color","synthetic":true,"types":[]},{"text":"impl Freeze for RasterOperation","synthetic":true,"types":[]},{"text":"impl Freeze for DeviceContext","synthetic":true,"types":[]},{"text":"impl Freeze for Brush","synthetic":true,"types":[]},{"text":"impl Freeze for GdiObject","synthetic":true,"types":[]},{"text":"impl Freeze for BitmapHandle","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
