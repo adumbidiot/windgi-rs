@@ -11,7 +11,7 @@ winapi = { version = "0.3.9", features = [ "winuser", "winerror" ] }
 
 [dev-dependencies]
 winapi = { version = "0.3.9", features = [ "shellscalingapi" ] }
-image = { version = "0.23.13", default-features = false, features = [ "jpeg" ] }
+image = { version = "0.23.14", default-features = false, features = [ "jpeg" ] }
 
 [profile.release]
 codegen-units = 1
